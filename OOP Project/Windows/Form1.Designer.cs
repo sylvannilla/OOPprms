@@ -99,7 +99,7 @@
             nameTextBox.Location = new Point(12, 202);
             nameTextBox.Name = "nameTextBox";
             nameTextBox.Size = new Size(339, 23);
-            nameTextBox.TabIndex = 6;
+            nameTextBox.TabIndex = 0;
             // 
             // label4
             // 
@@ -127,7 +127,7 @@
             ageTextBox.Location = new Point(446, 202);
             ageTextBox.Name = "ageTextBox";
             ageTextBox.Size = new Size(51, 23);
-            ageTextBox.TabIndex = 11;
+            ageTextBox.TabIndex = 2;
             // 
             // label6
             // 
@@ -146,7 +146,7 @@
             phoneNumberTextBox.Location = new Point(12, 332);
             phoneNumberTextBox.Name = "phoneNumberTextBox";
             phoneNumberTextBox.Size = new Size(137, 23);
-            phoneNumberTextBox.TabIndex = 13;
+            phoneNumberTextBox.TabIndex = 4;
             // 
             // label7
             // 
@@ -163,7 +163,7 @@
             emailTextBox.Location = new Point(176, 332);
             emailTextBox.Name = "emailTextBox";
             emailTextBox.Size = new Size(201, 23);
-            emailTextBox.TabIndex = 15;
+            emailTextBox.TabIndex = 5;
             emailTextBox.TextChanged += textBox4_TextChanged;
             // 
             // label8
@@ -182,7 +182,7 @@
             submitButton.Location = new Point(324, 562);
             submitButton.Name = "submitButton";
             submitButton.Size = new Size(144, 43);
-            submitButton.TabIndex = 0;
+            submitButton.TabIndex = 12;
             submitButton.Text = "SUBMIT";
             submitButton.UseVisualStyleBackColor = true;
             submitButton.Click += button1_Click;
@@ -253,7 +253,7 @@
             streetTextBox.Location = new Point(11, 401);
             streetTextBox.Name = "streetTextBox";
             streetTextBox.Size = new Size(365, 23);
-            streetTextBox.TabIndex = 32;
+            streetTextBox.TabIndex = 6;
             // 
             // label17
             // 
@@ -271,7 +271,7 @@
             cityTextBox.Location = new Point(11, 443);
             cityTextBox.Name = "cityTextBox";
             cityTextBox.Size = new Size(168, 23);
-            cityTextBox.TabIndex = 34;
+            cityTextBox.TabIndex = 7;
             // 
             // label18
             // 
@@ -290,7 +290,7 @@
             stateProvinceTextBox.Location = new Point(196, 443);
             stateProvinceTextBox.Name = "stateProvinceTextBox";
             stateProvinceTextBox.Size = new Size(180, 23);
-            stateProvinceTextBox.TabIndex = 36;
+            stateProvinceTextBox.TabIndex = 8;
             // 
             // label19
             // 
@@ -309,7 +309,7 @@
             postalZipTextBox.Location = new Point(12, 485);
             postalZipTextBox.Name = "postalZipTextBox";
             postalZipTextBox.Size = new Size(137, 23);
-            postalZipTextBox.TabIndex = 38;
+            postalZipTextBox.TabIndex = 9;
             // 
             // label21
             // 
@@ -337,7 +337,7 @@
             yesCheckBox.Location = new Point(12, 543);
             yesCheckBox.Name = "yesCheckBox";
             yesCheckBox.Size = new Size(43, 19);
-            yesCheckBox.TabIndex = 42;
+            yesCheckBox.TabIndex = 10;
             yesCheckBox.Text = "Yes";
             yesCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -347,7 +347,7 @@
             noCheckBox.Location = new Point(61, 543);
             noCheckBox.Name = "noCheckBox";
             noCheckBox.Size = new Size(42, 19);
-            noCheckBox.TabIndex = 43;
+            noCheckBox.TabIndex = 11;
             noCheckBox.Text = "No";
             noCheckBox.UseVisualStyleBackColor = true;
             noCheckBox.CheckedChanged += checkBox2_CheckedChanged;
@@ -358,14 +358,14 @@
             genderComboBox.Location = new Point(357, 202);
             genderComboBox.Name = "genderComboBox";
             genderComboBox.Size = new Size(83, 23);
-            genderComboBox.TabIndex = 44;
+            genderComboBox.TabIndex = 1;
             // 
             // dateOfBirthTextBox
             // 
             dateOfBirthTextBox.Location = new Point(12, 269);
             dateOfBirthTextBox.Name = "dateOfBirthTextBox";
             dateOfBirthTextBox.Size = new Size(100, 23);
-            dateOfBirthTextBox.TabIndex = 45;
+            dateOfBirthTextBox.TabIndex = 3;
             // 
             // Form1
             // 
