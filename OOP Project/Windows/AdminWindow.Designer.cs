@@ -30,12 +30,13 @@
         {
             SuspendLayout();
             // 
-            // Admin
+            // AdminWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Name = "Admin";
+            Name = "AdminWindow";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Admin";
             Load += Admin_Load;
             ResumeLayout(false);

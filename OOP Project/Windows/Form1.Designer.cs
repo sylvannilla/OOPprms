@@ -42,7 +42,7 @@
             label7 = new Label();
             emailTextBox = new TextBox();
             label8 = new Label();
-            submitButton = new Button();
+            btnSubmit = new Button();
             label9 = new Label();
             label10 = new Label();
             dateTextBox = new TextBox();
@@ -62,17 +62,18 @@
             noCheckBox = new CheckBox();
             genderComboBox = new ComboBox();
             dateOfBirthTextBox = new TextBox();
+            btnBackBooking = new Button();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
             // dateTimePicker1
             // 
+            dateTimePicker1.Enabled = false;
             dateTimePicker1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dateTimePicker1.Location = new Point(260, 17);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(208, 23);
             dateTimePicker1.TabIndex = 0;
-            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // label2
             // 
@@ -88,10 +89,9 @@
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(12, 184);
             label3.Name = "label3";
-            label3.Size = new Size(41, 15);
+            label3.Size = new Size(40, 15);
             label3.TabIndex = 5;
-            label3.Text = "NAME";
-            label3.Click += label3_Click;
+            label3.Text = "Name";
             // 
             // nameTextBox
             // 
@@ -105,11 +105,11 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(372, 184);
+            label4.Location = new Point(357, 184);
             label4.Name = "label4";
-            label4.Size = new Size(54, 15);
+            label4.Size = new Size(49, 15);
             label4.TabIndex = 7;
-            label4.Text = "GENDER";
+            label4.Text = "Gender";
             // 
             // label5
             // 
@@ -117,9 +117,9 @@
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.Location = new Point(446, 184);
             label5.Name = "label5";
-            label5.Size = new Size(30, 15);
+            label5.Size = new Size(29, 15);
             label5.TabIndex = 10;
-            label5.Text = "AGE";
+            label5.Text = "Age";
             // 
             // ageTextBox
             // 
@@ -138,7 +138,6 @@
             label6.Size = new Size(137, 15);
             label6.TabIndex = 12;
             label6.Text = "Pls fill in the form below.";
-            label6.Click += label6_Click;
             // 
             // phoneNumberTextBox
             // 
@@ -164,7 +163,6 @@
             emailTextBox.Name = "emailTextBox";
             emailTextBox.Size = new Size(201, 23);
             emailTextBox.TabIndex = 5;
-            emailTextBox.TextChanged += textBox4_TextChanged;
             // 
             // label8
             // 
@@ -175,17 +173,16 @@
             label8.Size = new Size(91, 15);
             label8.TabIndex = 16;
             label8.Text = "Phone Number";
-            label8.Click += label8_Click;
             // 
-            // submitButton
+            // btnSubmit
             // 
-            submitButton.Location = new Point(324, 562);
-            submitButton.Name = "submitButton";
-            submitButton.Size = new Size(144, 43);
-            submitButton.TabIndex = 12;
-            submitButton.Text = "SUBMIT";
-            submitButton.UseVisualStyleBackColor = true;
-            submitButton.Click += button1_Click;
+            btnSubmit.Location = new Point(324, 562);
+            btnSubmit.Name = "btnSubmit";
+            btnSubmit.Size = new Size(144, 43);
+            btnSubmit.TabIndex = 12;
+            btnSubmit.Text = "SUBMIT";
+            btnSubmit.UseVisualStyleBackColor = true;
+            btnSubmit.Click += btnSubmit_Click;
             // 
             // label9
             // 
@@ -196,7 +193,6 @@
             label9.Size = new Size(51, 15);
             label9.TabIndex = 17;
             label9.Text = "Address";
-            label9.Click += label9_Click;
             // 
             // label10
             // 
@@ -282,7 +278,6 @@
             label18.Size = new Size(24, 13);
             label18.TabIndex = 35;
             label18.Text = "City";
-            label18.Click += label18_Click;
             // 
             // stateProvinceTextBox
             // 
@@ -301,7 +296,6 @@
             label19.Size = new Size(79, 13);
             label19.TabIndex = 37;
             label19.Text = "State / Province";
-            label19.Click += label19_Click;
             // 
             // postalZipTextBox
             // 
@@ -350,7 +344,6 @@
             noCheckBox.TabIndex = 11;
             noCheckBox.Text = "No";
             noCheckBox.UseVisualStyleBackColor = true;
-            noCheckBox.CheckedChanged += checkBox2_CheckedChanged;
             // 
             // genderComboBox
             // 
@@ -367,11 +360,22 @@
             dateOfBirthTextBox.Size = new Size(100, 23);
             dateOfBirthTextBox.TabIndex = 3;
             // 
+            // btnBackBooking
+            // 
+            btnBackBooking.Location = new Point(8, 591);
+            btnBackBooking.Name = "btnBackBooking";
+            btnBackBooking.Size = new Size(75, 23);
+            btnBackBooking.TabIndex = 42;
+            btnBackBooking.Text = "Back";
+            btnBackBooking.UseVisualStyleBackColor = true;
+            btnBackBooking.Click += btnBackBooking_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(508, 626);
+            Controls.Add(btnBackBooking);
             Controls.Add(dateOfBirthTextBox);
             Controls.Add(genderComboBox);
             Controls.Add(noCheckBox);
@@ -390,7 +394,7 @@
             Controls.Add(dateTextBox);
             Controls.Add(label10);
             Controls.Add(label9);
-            Controls.Add(submitButton);
+            Controls.Add(btnSubmit);
             Controls.Add(label8);
             Controls.Add(emailTextBox);
             Controls.Add(label7);
@@ -429,7 +433,7 @@
         private Label label7;
         private TextBox emailTextBox;
         private Label label8;
-        private Button submitButton;
+        private Button btnSubmit;
         private Label label9;
         private Label label10;
         private TextBox dateTextBox;
@@ -449,5 +453,6 @@
         private CheckBox noCheckBox;
         private ComboBox genderComboBox;
         private TextBox dateOfBirthTextBox;
+        private Button btnBackBooking;
     }
 }

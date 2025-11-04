@@ -60,6 +60,7 @@
             Controls.Add(adminButton);
             Controls.Add(patientButton);
             Name = "RoleSelection";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "RoleSelection";
             Load += RoleSelection_Load;
             ResumeLayout(false);

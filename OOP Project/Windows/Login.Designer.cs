@@ -30,9 +30,10 @@
         {
             usernameTextBox = new TextBox();
             passwordTextBox = new TextBox();
-            loginButton = new Button();
-            button1 = new Button();
+            btnLogin = new Button();
+            btnCreateAccount = new Button();
             errorLabel = new Label();
+            btnBackLogin = new Button();
             SuspendLayout();
             // 
             // usernameTextBox
@@ -49,24 +50,24 @@
             passwordTextBox.Size = new Size(160, 23);
             passwordTextBox.TabIndex = 1;
             // 
-            // loginButton
+            // btnLogin
             // 
-            loginButton.Location = new Point(182, 325);
-            loginButton.Name = "loginButton";
-            loginButton.Size = new Size(75, 23);
-            loginButton.TabIndex = 2;
-            loginButton.Text = "LOGIN";
-            loginButton.UseVisualStyleBackColor = true;
-            loginButton.Click += loginButton_Click;
+            btnLogin.Location = new Point(182, 325);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(75, 23);
+            btnLogin.TabIndex = 2;
+            btnLogin.Text = "LOGIN";
+            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
-            // button1
+            // btnCreateAccount
             // 
-            button1.Location = new Point(167, 366);
-            button1.Name = "button1";
-            button1.Size = new Size(109, 23);
-            button1.TabIndex = 3;
-            button1.Text = "Create Account";
-            button1.UseVisualStyleBackColor = true;
+            btnCreateAccount.Location = new Point(167, 366);
+            btnCreateAccount.Name = "btnCreateAccount";
+            btnCreateAccount.Size = new Size(109, 23);
+            btnCreateAccount.TabIndex = 3;
+            btnCreateAccount.Text = "Create Account";
+            btnCreateAccount.UseVisualStyleBackColor = true;
             // 
             // errorLabel
             // 
@@ -77,17 +78,29 @@
             errorLabel.Size = new Size(0, 15);
             errorLabel.TabIndex = 3;
             // 
+            // btnBackLogin
+            // 
+            btnBackLogin.Location = new Point(14, 16);
+            btnBackLogin.Name = "btnBackLogin";
+            btnBackLogin.Size = new Size(75, 23);
+            btnBackLogin.TabIndex = 4;
+            btnBackLogin.Text = "Back";
+            btnBackLogin.UseVisualStyleBackColor = true;
+            btnBackLogin.Click += btnBackLogin_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(437, 450);
+            Controls.Add(btnBackLogin);
             Controls.Add(errorLabel);
-            Controls.Add(button1);
-            Controls.Add(loginButton);
+            Controls.Add(btnCreateAccount);
+            Controls.Add(btnLogin);
             Controls.Add(passwordTextBox);
             Controls.Add(usernameTextBox);
             Name = "Login";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             Load += Login_Load;
             ResumeLayout(false);
@@ -98,8 +111,9 @@
 
         private TextBox usernameTextBox;
         private TextBox passwordTextBox;
-        private Button loginButton;
-        private Button button1;
+        private Button btnLogin;
+        private Button btnCreateAccount;
         private Label errorLabel;
+        private Button btnBackLogin;
     }
 }

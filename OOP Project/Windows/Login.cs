@@ -28,7 +28,7 @@ namespace OOP_Project
             usernameTextBox.Focus();
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = usernameTextBox.Text;
             string password = passwordTextBox.Text;
@@ -55,6 +55,7 @@ namespace OOP_Project
                                 this.Hide();
                                 AdminWindow admin = new AdminWindow();
                                 admin.ShowDialog();
+                                clearFields();
                             }
                             else
                             {
@@ -68,6 +69,20 @@ namespace OOP_Project
             {
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
+        }
+
+        public void clearFields()
+        {
+            usernameTextBox.Text = "";
+            passwordTextBox.Text = "";
+            errorLabel.Text = "";
+            usernameTextBox.Focus();
+        }
+        public void btnBackLogin_Click(object sender, EventArgs e)
+        {
+            RoleSelection roleSelection = new RoleSelection();
+            roleSelection.Show();
+            this.Hide();
         }
     }
 }
