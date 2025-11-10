@@ -40,7 +40,6 @@
             emailTextBox = new TextBox();
             label8 = new Label();
             btnSubmit = new Button();
-            label10 = new Label();
             dateTextBox = new TextBox();
             label12 = new Label();
             label13 = new Label();
@@ -69,6 +68,9 @@
             panel3 = new Panel();
             panel4 = new Panel();
             panel5 = new Panel();
+            label9 = new Label();
+            panel2 = new Panel();
+            additionalNotesTextBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
@@ -84,6 +86,7 @@
             // 
             // nameTextBox
             // 
+            nameTextBox.BackColor = Color.FromArgb(248, 252, 252);
             nameTextBox.BorderStyle = BorderStyle.FixedSingle;
             nameTextBox.Location = new Point(36, 142);
             nameTextBox.Name = "nameTextBox";
@@ -112,14 +115,16 @@
             // 
             // ageTextBox
             // 
+            ageTextBox.BackColor = Color.FromArgb(248, 252, 252);
             ageTextBox.BorderStyle = BorderStyle.FixedSingle;
             ageTextBox.Location = new Point(498, 142);
             ageTextBox.Name = "ageTextBox";
-            ageTextBox.Size = new Size(51, 23);
+            ageTextBox.Size = new Size(52, 23);
             ageTextBox.TabIndex = 2;
             // 
             // phoneNumberTextBox
             // 
+            phoneNumberTextBox.BackColor = Color.FromArgb(248, 252, 252);
             phoneNumberTextBox.BorderStyle = BorderStyle.FixedSingle;
             phoneNumberTextBox.Location = new Point(36, 272);
             phoneNumberTextBox.Name = "phoneNumberTextBox";
@@ -137,6 +142,7 @@
             // 
             // emailTextBox
             // 
+            emailTextBox.BackColor = Color.FromArgb(248, 252, 252);
             emailTextBox.BorderStyle = BorderStyle.FixedSingle;
             emailTextBox.Location = new Point(179, 272);
             emailTextBox.Name = "emailTextBox";
@@ -155,33 +161,28 @@
             // 
             // btnSubmit
             // 
-            btnSubmit.Location = new Point(405, 510);
+            btnSubmit.BackColor = Color.FromArgb(25, 118, 210);
+            btnSubmit.FlatStyle = FlatStyle.Flat;
+            btnSubmit.ForeColor = Color.White;
+            btnSubmit.Location = new Point(454, 689);
             btnSubmit.Name = "btnSubmit";
-            btnSubmit.Size = new Size(144, 43);
+            btnSubmit.Size = new Size(96, 33);
             btnSubmit.TabIndex = 12;
             btnSubmit.Text = "SUBMIT";
-            btnSubmit.UseVisualStyleBackColor = true;
+            btnSubmit.UseVisualStyleBackColor = false;
             btnSubmit.Click += btnSubmit_Click;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(406, 9);
-            label10.Name = "label10";
-            label10.Size = new Size(89, 15);
-            label10.TabIndex = 18;
-            label10.Text = "Date and time:";
             // 
             // dateTextBox
             // 
-            dateTextBox.BackColor = SystemColors.Menu;
+            dateTextBox.BackColor = Color.FromArgb(220, 238, 243);
             dateTextBox.BorderStyle = BorderStyle.None;
             dateTextBox.Enabled = false;
-            dateTextBox.Location = new Point(406, 27);
+            dateTextBox.Location = new Point(415, 9);
             dateTextBox.Name = "dateTextBox";
-            dateTextBox.Size = new Size(159, 16);
+            dateTextBox.Size = new Size(135, 16);
             dateTextBox.TabIndex = 19;
+            dateTextBox.TextAlign = HorizontalAlignment.Center;
+            dateTextBox.TextChanged += dateTextBox_TextChanged;
             // 
             // label12
             // 
@@ -201,7 +202,7 @@
             label13.Name = "label13";
             label13.Size = new Size(71, 13);
             label13.TabIndex = 24;
-            label13.Text = "YYYY/MM/DD";
+            label13.Text = "YYYY-MM-DD";
             // 
             // label1
             // 
@@ -215,6 +216,7 @@
             // 
             // streetTextBox
             // 
+            streetTextBox.BackColor = Color.FromArgb(248, 252, 252);
             streetTextBox.BorderStyle = BorderStyle.FixedSingle;
             streetTextBox.Location = new Point(36, 350);
             streetTextBox.Name = "streetTextBox";
@@ -233,6 +235,7 @@
             // 
             // cityTextBox
             // 
+            cityTextBox.BackColor = Color.FromArgb(248, 252, 252);
             cityTextBox.BorderStyle = BorderStyle.FixedSingle;
             cityTextBox.Location = new Point(406, 350);
             cityTextBox.Name = "cityTextBox";
@@ -251,6 +254,7 @@
             // 
             // stateProvinceTextBox
             // 
+            stateProvinceTextBox.BackColor = Color.FromArgb(248, 252, 252);
             stateProvinceTextBox.BorderStyle = BorderStyle.FixedSingle;
             stateProvinceTextBox.Location = new Point(36, 392);
             stateProvinceTextBox.Name = "stateProvinceTextBox";
@@ -269,6 +273,7 @@
             // 
             // postalZipTextBox
             // 
+            postalZipTextBox.BackColor = Color.FromArgb(248, 252, 252);
             postalZipTextBox.BorderStyle = BorderStyle.FixedSingle;
             postalZipTextBox.Location = new Point(222, 392);
             postalZipTextBox.Name = "postalZipTextBox";
@@ -297,6 +302,7 @@
             // 
             // genderComboBox
             // 
+            genderComboBox.BackColor = Color.FromArgb(248, 252, 252);
             genderComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             genderComboBox.FormattingEnabled = true;
             genderComboBox.Location = new Point(381, 142);
@@ -306,13 +312,16 @@
             // 
             // dateOfBirthTextBox
             // 
+            dateOfBirthTextBox.BackColor = Color.FromArgb(248, 252, 252);
             dateOfBirthTextBox.Location = new Point(36, 199);
             dateOfBirthTextBox.Name = "dateOfBirthTextBox";
             dateOfBirthTextBox.Size = new Size(100, 23);
             dateOfBirthTextBox.TabIndex = 3;
+            dateOfBirthTextBox.TextChanged += dateOfBirthTextBox_TextChanged;
             // 
             // appointmentTimePicker
             // 
+            appointmentTimePicker.CalendarMonthBackground = Color.FromArgb(248, 252, 252);
             appointmentTimePicker.Format = DateTimePickerFormat.Time;
             appointmentTimePicker.Location = new Point(242, 74);
             appointmentTimePicker.Name = "appointmentTimePicker";
@@ -332,6 +341,7 @@
             // 
             // appointmentDatePicker
             // 
+            appointmentDatePicker.CalendarMonthBackground = Color.FromArgb(248, 252, 252);
             appointmentDatePicker.Location = new Point(36, 74);
             appointmentDatePicker.Name = "appointmentDatePicker";
             appointmentDatePicker.Size = new Size(200, 23);
@@ -435,11 +445,42 @@
             panel5.Size = new Size(538, 1);
             panel5.TabIndex = 49;
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Location = new Point(12, 518);
+            label9.Name = "label9";
+            label9.Size = new Size(185, 15);
+            label9.TabIndex = 41;
+            label9.Text = "💬 Additional Notes / Symptoms";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Silver;
+            panel2.ForeColor = Color.Black;
+            panel2.Location = new Point(12, 514);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(538, 1);
+            panel2.TabIndex = 49;
+            // 
+            // additionalNotesTextBox
+            // 
+            additionalNotesTextBox.BackColor = Color.FromArgb(248, 252, 252);
+            additionalNotesTextBox.BorderStyle = BorderStyle.FixedSingle;
+            additionalNotesTextBox.Location = new Point(36, 536);
+            additionalNotesTextBox.Multiline = true;
+            additionalNotesTextBox.Name = "additionalNotesTextBox";
+            additionalNotesTextBox.Size = new Size(514, 115);
+            additionalNotesTextBox.TabIndex = 8;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(575, 569);
+            BackColor = Color.FromArgb(220, 238, 243);
+            ClientSize = new Size(566, 734);
+            Controls.Add(panel2);
             Controls.Add(panel5);
             Controls.Add(panel3);
             Controls.Add(panel4);
@@ -449,12 +490,14 @@
             Controls.Add(appointmentDatePicker);
             Controls.Add(appointmentTimePicker);
             Controls.Add(dateOfBirthTextBox);
+            Controls.Add(label9);
             Controls.Add(genderComboBox);
             Controls.Add(label16);
             Controls.Add(label20);
             Controls.Add(label21);
             Controls.Add(postalZipTextBox);
             Controls.Add(label19);
+            Controls.Add(additionalNotesTextBox);
             Controls.Add(stateProvinceTextBox);
             Controls.Add(label18);
             Controls.Add(cityTextBox);
@@ -464,7 +507,6 @@
             Controls.Add(label12);
             Controls.Add(dateTextBox);
             Controls.Add(label11);
-            Controls.Add(label10);
             Controls.Add(label15);
             Controls.Add(btnSubmit);
             Controls.Add(label14);
@@ -479,6 +521,8 @@
             Controls.Add(label6);
             Controls.Add(label3);
             Controls.Add(label1);
+            ForeColor = SystemColors.ControlText;
+            FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
@@ -502,7 +546,6 @@
         private TextBox emailTextBox;
         private Label label8;
         private Button btnSubmit;
-        private Label label10;
         private TextBox dateTextBox;
         private Label label12;
         private Label label13;
@@ -531,5 +574,8 @@
         private Panel panel3;
         private Panel panel4;
         private Panel panel5;
+        private Label label9;
+        private Panel panel2;
+        private TextBox additionalNotesTextBox;
     }
 }

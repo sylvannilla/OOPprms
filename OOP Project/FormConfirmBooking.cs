@@ -18,7 +18,8 @@ namespace OOP_Project
             string address,
             string currentMedication,
             string submissionTime,
-            string appointmentTime)
+            string appointmentTime,
+            string additionalNotes)
         {
             InitializeComponent();
 
@@ -32,6 +33,7 @@ namespace OOP_Project
             lblAddress.Text = address;
             lblMedication.Text = currentMedication;
             lblAppointmentTime.Text = appointmentTime;
+            lblAdditionalNotes.Text = additionalNotes;
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)

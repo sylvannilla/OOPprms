@@ -57,13 +57,16 @@
             panel2 = new Panel();
             panel3 = new Panel();
             panel4 = new Panel();
+            lblAdditionalNotes = new Label();
+            label17 = new Label();
+            panel5 = new Panel();
             SuspendLayout();
             // 
             // lblPatientName
             // 
             lblPatientName.AutoSize = true;
             lblPatientName.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPatientName.Location = new Point(275, 79);
+            lblPatientName.Location = new Point(275, 107);
             lblPatientName.Name = "lblPatientName";
             lblPatientName.Size = new Size(0, 15);
             lblPatientName.TabIndex = 0;
@@ -71,7 +74,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(103, 79);
+            label1.Location = new Point(103, 107);
             label1.Name = "label1";
             label1.Size = new Size(82, 15);
             label1.TabIndex = 1;
@@ -81,7 +84,7 @@
             // 
             lblGender.AutoSize = true;
             lblGender.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblGender.Location = new Point(275, 94);
+            lblGender.Location = new Point(275, 122);
             lblGender.Name = "lblGender";
             lblGender.Size = new Size(0, 15);
             lblGender.TabIndex = 0;
@@ -89,7 +92,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(103, 94);
+            label3.Location = new Point(103, 122);
             label3.Name = "label3";
             label3.Size = new Size(48, 15);
             label3.TabIndex = 1;
@@ -99,7 +102,7 @@
             // 
             lblAge.AutoSize = true;
             lblAge.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAge.Location = new Point(275, 109);
+            lblAge.Location = new Point(275, 137);
             lblAge.Name = "lblAge";
             lblAge.Size = new Size(0, 15);
             lblAge.TabIndex = 0;
@@ -107,7 +110,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(103, 109);
+            label5.Location = new Point(103, 137);
             label5.Name = "label5";
             label5.Size = new Size(31, 15);
             label5.TabIndex = 1;
@@ -117,7 +120,7 @@
             // 
             lblDateOfBirth.AutoSize = true;
             lblDateOfBirth.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDateOfBirth.Location = new Point(275, 124);
+            lblDateOfBirth.Location = new Point(275, 152);
             lblDateOfBirth.Name = "lblDateOfBirth";
             lblDateOfBirth.Size = new Size(0, 15);
             lblDateOfBirth.TabIndex = 0;
@@ -125,7 +128,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(103, 124);
+            label7.Location = new Point(103, 152);
             label7.Name = "label7";
             label7.Size = new Size(76, 15);
             label7.TabIndex = 1;
@@ -135,7 +138,7 @@
             // 
             lblPhone.AutoSize = true;
             lblPhone.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPhone.Location = new Point(275, 168);
+            lblPhone.Location = new Point(275, 196);
             lblPhone.Name = "lblPhone";
             lblPhone.Size = new Size(0, 15);
             lblPhone.TabIndex = 0;
@@ -143,7 +146,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(103, 168);
+            label9.Location = new Point(103, 196);
             label9.Name = "label9";
             label9.Size = new Size(44, 15);
             label9.TabIndex = 1;
@@ -153,7 +156,7 @@
             // 
             lblEmail.AutoSize = true;
             lblEmail.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblEmail.Location = new Point(275, 183);
+            lblEmail.Location = new Point(275, 211);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(0, 15);
             lblEmail.TabIndex = 0;
@@ -161,7 +164,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(103, 183);
+            label11.Location = new Point(103, 211);
             label11.Name = "label11";
             label11.Size = new Size(39, 15);
             label11.TabIndex = 1;
@@ -171,7 +174,7 @@
             // 
             lblAddress.AutoSize = true;
             lblAddress.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAddress.Location = new Point(275, 224);
+            lblAddress.Location = new Point(275, 252);
             lblAddress.Name = "lblAddress";
             lblAddress.Size = new Size(0, 15);
             lblAddress.TabIndex = 0;
@@ -179,7 +182,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(103, 224);
+            label13.Location = new Point(103, 252);
             label13.Name = "label13";
             label13.Size = new Size(52, 15);
             label13.TabIndex = 1;
@@ -189,7 +192,7 @@
             // 
             lblMedication.AutoSize = true;
             lblMedication.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMedication.Location = new Point(275, 270);
+            lblMedication.Location = new Point(275, 335);
             lblMedication.Name = "lblMedication";
             lblMedication.Size = new Size(0, 15);
             lblMedication.TabIndex = 0;
@@ -197,7 +200,7 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(103, 270);
+            label15.Location = new Point(103, 335);
             label15.Name = "label15";
             label15.Size = new Size(70, 15);
             label15.TabIndex = 1;
@@ -205,28 +208,35 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(140, 404);
+            btnCancel.BackColor = Color.FromArgb(210, 25, 25);
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.ForeColor = Color.White;
+            btnCancel.Location = new Point(403, 536);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(75, 23);
+            btnCancel.Size = new Size(83, 34);
             btnCancel.TabIndex = 2;
-            btnCancel.Text = "Cancel";
-            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Text = "CANCEL";
+            btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
             // 
             // btnConfirm
             // 
-            btnConfirm.Location = new Point(228, 404);
+            btnConfirm.BackColor = Color.FromArgb(25, 118, 210);
+            btnConfirm.FlatStyle = FlatStyle.Flat;
+            btnConfirm.ForeColor = Color.White;
+            btnConfirm.Location = new Point(492, 536);
             btnConfirm.Name = "btnConfirm";
-            btnConfirm.Size = new Size(75, 23);
+            btnConfirm.Size = new Size(83, 34);
             btnConfirm.TabIndex = 3;
-            btnConfirm.Text = "Confirm";
-            btnConfirm.UseVisualStyleBackColor = true;
+            btnConfirm.Text = "CONFIRM";
+            btnConfirm.UseVisualStyleBackColor = false;
             btnConfirm.Click += btnConfirm_Click;
             // 
             // lblAppointmentTime
             // 
             lblAppointmentTime.AutoSize = true;
-            lblAppointmentTime.Location = new Point(275, 33);
+            lblAppointmentTime.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAppointmentTime.Location = new Point(275, 61);
             lblAppointmentTime.Name = "lblAppointmentTime";
             lblAppointmentTime.Size = new Size(0, 15);
             lblAppointmentTime.TabIndex = 5;
@@ -234,7 +244,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(103, 33);
+            label2.Location = new Point(103, 61);
             label2.Name = "label2";
             label2.Size = new Size(160, 15);
             label2.TabIndex = 1;
@@ -244,7 +254,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label4.Location = new Point(67, 17);
+            label4.Location = new Point(67, 45);
             label4.Name = "label4";
             label4.Size = new Size(161, 15);
             label4.TabIndex = 6;
@@ -254,7 +264,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label6.Location = new Point(67, 63);
+            label6.Location = new Point(67, 91);
             label6.Name = "label6";
             label6.Size = new Size(138, 15);
             label6.TabIndex = 7;
@@ -264,7 +274,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label8.Location = new Point(67, 152);
+            label8.Location = new Point(67, 180);
             label8.Name = "label8";
             label8.Size = new Size(136, 15);
             label8.TabIndex = 8;
@@ -274,7 +284,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label10.Location = new Point(67, 208);
+            label10.Location = new Point(67, 236);
             label10.Name = "label10";
             label10.Size = new Size(107, 15);
             label10.TabIndex = 9;
@@ -284,7 +294,7 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label12.Location = new Point(67, 254);
+            label12.Location = new Point(67, 319);
             label12.Name = "label12";
             label12.Size = new Size(125, 15);
             label12.TabIndex = 10;
@@ -294,47 +304,78 @@
             // 
             panel1.BackColor = Color.DarkGray;
             panel1.ForeColor = Color.Black;
-            panel1.Location = new Point(22, 59);
+            panel1.Location = new Point(12, 87);
             panel1.Name = "panel1";
-            panel1.Size = new Size(400, 1);
+            panel1.Size = new Size(563, 1);
             panel1.TabIndex = 11;
             // 
             // panel2
             // 
             panel2.BackColor = Color.DarkGray;
             panel2.ForeColor = Color.Black;
-            panel2.Location = new Point(22, 148);
+            panel2.Location = new Point(12, 176);
             panel2.Name = "panel2";
-            panel2.Size = new Size(400, 1);
+            panel2.Size = new Size(563, 1);
             panel2.TabIndex = 11;
             // 
             // panel3
             // 
             panel3.BackColor = Color.DarkGray;
             panel3.ForeColor = Color.Black;
-            panel3.Location = new Point(22, 204);
+            panel3.Location = new Point(12, 232);
             panel3.Name = "panel3";
-            panel3.Size = new Size(400, 1);
+            panel3.Size = new Size(563, 1);
             panel3.TabIndex = 11;
             // 
             // panel4
             // 
             panel4.BackColor = Color.DarkGray;
             panel4.ForeColor = Color.Black;
-            panel4.Location = new Point(22, 250);
+            panel4.Location = new Point(12, 315);
             panel4.Name = "panel4";
-            panel4.Size = new Size(400, 1);
+            panel4.Size = new Size(563, 1);
             panel4.TabIndex = 11;
+            // 
+            // lblAdditionalNotes
+            // 
+            lblAdditionalNotes.AllowDrop = true;
+            lblAdditionalNotes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAdditionalNotes.Location = new Point(103, 400);
+            lblAdditionalNotes.Name = "lblAdditionalNotes";
+            lblAdditionalNotes.Size = new Size(472, 117);
+            lblAdditionalNotes.TabIndex = 0;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label17.Location = new Point(67, 385);
+            label17.Name = "label17";
+            label17.Size = new Size(185, 15);
+            label17.TabIndex = 10;
+            label17.Text = "💬 Additional Notes / Symptoms";
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.DarkGray;
+            panel5.ForeColor = Color.Black;
+            panel5.Location = new Point(12, 381);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(563, 1);
+            panel5.TabIndex = 11;
             // 
             // FormConfirmBooking
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(445, 450);
+            BackColor = Color.FromArgb(220, 238, 243);
+            ClientSize = new Size(587, 584);
+            Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(label17);
             Controls.Add(label12);
             Controls.Add(label10);
             Controls.Add(label8);
@@ -350,6 +391,7 @@
             Controls.Add(label2);
             Controls.Add(label15);
             Controls.Add(label9);
+            Controls.Add(lblAdditionalNotes);
             Controls.Add(label3);
             Controls.Add(lblMedication);
             Controls.Add(label13);
@@ -360,6 +402,7 @@
             Controls.Add(lblDateOfBirth);
             Controls.Add(label1);
             Controls.Add(lblPatientName);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FormConfirmBooking";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormConfirmBooking";
@@ -399,5 +442,8 @@
         private Panel panel2;
         private Panel panel3;
         private Panel panel4;
+        private Label lblAdditionalNotes;
+        private Label label17;
+        private Panel panel5;
     }
 }
