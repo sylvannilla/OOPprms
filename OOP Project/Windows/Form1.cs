@@ -227,9 +227,10 @@ namespace OOP_Project
                                   string address, string currentMedication, string additionalNotes)
         {
             using var con = new MySqlConnection(connectionString);
-            using var cmd = new MySqlCommand(@"INSERT INTO oop_project.booking 
-                    (appointment_datetime, submission_datetime, patient_name, gender, age, date_of_birth, phone_number, email, address, current_medication, additional_notes)
-                    VALUES (@appointment_datetime, @submission_datetime, @patientname, @gender, @age, @dateofbirth, @phonenumber, @email, @address, @current_medication, @additional_notes)", con);
+            using var cmd = new MySqlCommand(@" INSERT INTO oop_project.booking 
+                                            (appointment_datetime, submission_datetime, patient_name, gender, age, date_of_birth, phone_number, email, address, current_medication, additional_notes, status)
+                                            VALUES 
+                                            (@appointment_datetime, @submission_datetime, @patientname, @gender, @age, @dateofbirth, @phonenumber, @email, @address, @current_medication, @additional_notes, @status)", con);
 
             cmd.Parameters.AddWithValue("@appointment_datetime", appointmentDateTime);
             cmd.Parameters.AddWithValue("@submission_datetime", submissionDateTime);
@@ -242,6 +243,8 @@ namespace OOP_Project
             cmd.Parameters.AddWithValue("@address", address);
             cmd.Parameters.AddWithValue("@current_medication", currentMedication);
             cmd.Parameters.AddWithValue("@additional_notes", additionalNotes);
+            cmd.Parameters.AddWithValue("@status", "Pending"); // NEW
+
 
             con.Open();
             cmd.ExecuteNonQuery();
