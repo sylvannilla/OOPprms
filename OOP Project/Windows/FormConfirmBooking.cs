@@ -7,7 +7,6 @@ namespace OOP_Project
     {
         public bool Confirmed { get; private set; } = false;
 
-        // Constructor receives all data from Form1
         public FormConfirmBooking(
             string patientName,
             string gender,
@@ -23,7 +22,6 @@ namespace OOP_Project
         {
             InitializeComponent();
 
-            // Assign labels immediately
             lblPatientName.Text = patientName;
             lblGender.Text = gender;
             lblAge.Text = age;
@@ -47,7 +45,6 @@ namespace OOP_Project
             Confirmed = false;
             this.Close();
         }
-
         private void FormConfirmBooking_Load(object sender, EventArgs e)
         {
 

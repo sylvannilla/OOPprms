@@ -167,7 +167,7 @@
             btnSubmit.Location = new Point(454, 689);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(96, 33);
-            btnSubmit.TabIndex = 12;
+            btnSubmit.TabIndex = 13;
             btnSubmit.Text = "SUBMIT";
             btnSubmit.UseVisualStyleBackColor = false;
             btnSubmit.Click += btnSubmit_Click;
@@ -393,7 +393,7 @@
             noRadioButton.Location = new Point(36, 489);
             noRadioButton.Name = "noRadioButton";
             noRadioButton.Size = new Size(41, 19);
-            noRadioButton.TabIndex = 45;
+            noRadioButton.TabIndex = 11;
             noRadioButton.TabStop = true;
             noRadioButton.Text = "No";
             noRadioButton.UseVisualStyleBackColor = true;
@@ -404,7 +404,7 @@
             yesRadioButton.Location = new Point(36, 464);
             yesRadioButton.Name = "yesRadioButton";
             yesRadioButton.Size = new Size(42, 19);
-            yesRadioButton.TabIndex = 45;
+            yesRadioButton.TabIndex = 10;
             yesRadioButton.TabStop = true;
             yesRadioButton.Text = "Yes";
             yesRadioButton.UseVisualStyleBackColor = true;
@@ -472,7 +472,7 @@
             additionalNotesTextBox.Multiline = true;
             additionalNotesTextBox.Name = "additionalNotesTextBox";
             additionalNotesTextBox.Size = new Size(514, 115);
-            additionalNotesTextBox.TabIndex = 8;
+            additionalNotesTextBox.TabIndex = 12;
             // 
             // Form1
             // 

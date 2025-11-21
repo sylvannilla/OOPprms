@@ -14,12 +14,7 @@ namespace OOP_Project
         public Form1()
         {
             InitializeComponent();
-
-            // Timer for submission timestamp
-            timerDateTime = new System.Windows.Forms.Timer
-            {
-                Interval = 1000
-            };
+            timerDateTime = new System.Windows.Forms.Timer { Interval = 1000 };
             timerDateTime.Tick += TimerDateTime_Tick;
 
             bookingManager = new BookingManager();
@@ -27,7 +22,6 @@ namespace OOP_Project
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // Gender ComboBox
             genderComboBox.Items.AddRange(new string[] { "Male", "Female", "Prefer to not say" });
 
             dateTextBox.ReadOnly = true;
@@ -35,13 +29,11 @@ namespace OOP_Project
             dateTextBox.Text = DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt");
             timerDateTime.Start();
 
-            // Appointment Date Picker
             appointmentDatePicker.Format = DateTimePickerFormat.Custom;
             appointmentDatePicker.CustomFormat = "MMMM dd, yyyy";
             appointmentDatePicker.MinDate = DateTime.Today;
             appointmentDatePicker.MaxDate = DateTime.Today.AddMonths(6);
 
-            // Appointment Time Picker
             appointmentTimePicker.Format = DateTimePickerFormat.Custom;
             appointmentTimePicker.CustomFormat = "hh:mm tt";
             appointmentTimePicker.ShowUpDown = true;
@@ -55,47 +47,46 @@ namespace OOP_Project
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            // ----------------- Validation -----------------
+            // --- Validation ---
 
-            // Gender
             if (genderComboBox.SelectedIndex == -1)
             {
-                MessageBox.Show("Please select a gender.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                bookingManager.ShowValidationMessage("Please select a gender.");
                 return;
             }
 
-            // Medication RadioButtons
-            string medicationStatus = GetMedicationStatus();
+            string medicationStatus =
+                bookingManager.GetMedicationStatus(yesRadioButton, noRadioButton);
+
             if (string.IsNullOrEmpty(medicationStatus))
             {
-                MessageBox.Show("Please indicate if the patient is currently taking any medication.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                bookingManager.ShowValidationMessage("Please indicate if the patient is currently taking any medication.");
                 return;
             }
 
-            // Age: only digits
             if (!int.TryParse(ageTextBox.Text, out int age) || age <= 0)
             {
-                MessageBox.Show("Please enter a valid age using digits only.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                bookingManager.ShowValidationMessage("Please enter a valid age using digits only.");
                 ageTextBox.Focus();
                 return;
             }
 
-            // Contact Number: digits only, max 11 digits
             string phone = phoneNumberTextBox.Text.Trim();
             if (!phone.All(char.IsDigit))
             {
-                MessageBox.Show("Contact number can only contain digits.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                phoneNumberTextBox.Focus();
-                return;
-            }
-            if (phone.Length > 11)
-            {
-                MessageBox.Show("Contact number cannot be more than 11 digits.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                bookingManager.ShowValidationMessage("Contact number can only contain digits.");
                 phoneNumberTextBox.Focus();
                 return;
             }
 
-            // ----------------- Continue Submission -----------------
+            if (phone.Length > 11)
+            {
+                bookingManager.ShowValidationMessage("Contact number cannot be more than 11 digits.");
+                phoneNumberTextBox.Focus();
+                return;
+            }
+
+            // --- Prepare data ---
             DateTime appointmentDateTime = appointmentDatePicker.Value.Date + appointmentTimePicker.Value.TimeOfDay;
             DateTime submissionDateTime = DateTime.Now;
 
@@ -106,6 +97,7 @@ namespace OOP_Project
                 postalZipTextBox.Text
             );
 
+            // Open confirmation window
             FormConfirmBooking confirmForm = new FormConfirmBooking(
                 nameTextBox.Text,
                 genderComboBox.Text,
@@ -143,13 +135,6 @@ namespace OOP_Project
             ClearForm();
         }
 
-        private string GetMedicationStatus()
-        {
-            if (yesRadioButton.Checked) return "Yes";
-            if (noRadioButton.Checked) return "No";
-            return string.Empty;
-        }
-
         private void ClearForm()
         {
             nameTextBox.Clear();
@@ -171,83 +156,13 @@ namespace OOP_Project
 
         private void dateOfBirthTextBox_TextChanged(object sender, EventArgs e)
         {
-            dateOfBirthTextBox.Text = DateFormatter.FormatAsYYYYMMDD(dateOfBirthTextBox.Text, dateOfBirthTextBox.SelectionStart, out int cursorPos);
+            dateOfBirthTextBox.Text = DateFormatter.FormatAsYYYYMMDD(
+                dateOfBirthTextBox.Text,
+                dateOfBirthTextBox.SelectionStart,
+                out int cursorPos);
+
             dateOfBirthTextBox.SelectionStart = cursorPos;
         }
-
-        private void dateTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-    }
-
-    // ==================== Helper Classes ====================
-
-    public static class AddressFormatter
-    {
-        public static string Format(string street, string city, string state, string postal)
-        {
-            return $"{street}, \n{city}, \n{state}, {postal}";
-        }
-    }
-
-    public static class DateFormatter
-    {
-        public static string FormatAsYYYYMMDD(string input, int currentCursor, out int newCursor)
-        {
-            string digits = System.Text.RegularExpressions.Regex.Replace(input, @"\D", "");
-            if (digits.Length > 8) digits = digits.Substring(0, 8);
-
-            string formatted = digits;
-            if (digits.Length > 4 && digits.Length <= 6)
-                formatted = digits.Substring(0, 4) + "-" + digits.Substring(4);
-            else if (digits.Length > 6)
-                formatted = digits.Substring(0, 4) + "-" + digits.Substring(4, 2) + "-" + digits.Substring(6);
-
-            // Fix cursor position
-            int dashBefore = input.Take(currentCursor).Count(c => c == '-');
-            int dashAfter = formatted.Take(currentCursor).Count(c => c == '-');
-            newCursor = currentCursor + (dashAfter - dashBefore);
-
-            return formatted;
-        }
-    }
-
-    public class BookingManager
-    {
-        private readonly string connectionString = "Server=oop-prms-iqperia06-3946oop.e.aivencloud.com;" +
-                                                   "Port=19631;" +
-                                                   "Database=defaultdb;" +
-                                                   "User ID=avnadmin;" +
-                                                   "Password=AVNS_DC-Fjd1udeFkVwK429X;" +
-                                                   "SslMode=Required;";
-
-        public void InsertBooking(DateTime appointmentDateTime, DateTime submissionDateTime, string patientName,
-                                  string gender, string age, string dateOfBirth, string phoneNumber, string email,
-                                  string address, string currentMedication, string additionalNotes)
-        {
-            using var con = new MySqlConnection(connectionString);
-            using var cmd = new MySqlCommand(@" INSERT INTO oop_project.booking 
-                                            (appointment_datetime, submission_datetime, patient_name, gender, age, date_of_birth, phone_number, email, address, current_medication, additional_notes, status)
-                                            VALUES 
-                                            (@appointment_datetime, @submission_datetime, @patientname, @gender, @age, @dateofbirth, @phonenumber, @email, @address, @current_medication, @additional_notes, @status)", con);
-
-            cmd.Parameters.AddWithValue("@appointment_datetime", appointmentDateTime);
-            cmd.Parameters.AddWithValue("@submission_datetime", submissionDateTime);
-            cmd.Parameters.AddWithValue("@patientname", patientName);
-            cmd.Parameters.AddWithValue("@gender", gender);
-            cmd.Parameters.AddWithValue("@age", age);
-            cmd.Parameters.AddWithValue("@dateofbirth", dateOfBirth);
-            cmd.Parameters.AddWithValue("@phonenumber", phoneNumber);
-            cmd.Parameters.AddWithValue("@email", email);
-            cmd.Parameters.AddWithValue("@address", address);
-            cmd.Parameters.AddWithValue("@current_medication", currentMedication);
-            cmd.Parameters.AddWithValue("@additional_notes", additionalNotes);
-            cmd.Parameters.AddWithValue("@status", "Pending"); // NEW
-
-
-            con.Open();
-            cmd.ExecuteNonQuery();
-        }
+        private void dateTextBox_TextChanged(object sender, EventArgs e) { }
     }
 }
